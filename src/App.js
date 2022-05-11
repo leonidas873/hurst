@@ -1,14 +1,14 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './Pages';
 
-
-function App() {
-
-
-
+const App = () => {
   return (
-    <div className="App">
-  hellow world
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
