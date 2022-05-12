@@ -1,13 +1,12 @@
 import './App.css';
-
+import { Cart } from './pages';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
 
-
-
   return (
     <div className="App">
-  hellow world
+      <Cart/>
     </div>
   );
 }
