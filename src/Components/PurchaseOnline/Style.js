@@ -31,7 +31,6 @@ export const MyTabs = styled(Tabs)({
     '& button': {
         display: 'flex',
         color: '#666',
-        display: 'inline-block',
         fontSize: '14px',
         fontWeight: '700',
         lineHeight: '10px',
