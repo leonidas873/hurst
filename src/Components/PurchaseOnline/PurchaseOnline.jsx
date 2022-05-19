@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Box, Grid } from '@mui/material'
 import Tab from '@mui/material/Tab';
-import { Title, MyTabs } from './Style'
-import SingleProduct from '../SingleProduct/SingleProduct';
+import { MyTabs } from './Style'
+import { SectionTitle, SingleProduct } from '../Common';
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -41,7 +41,7 @@ const PurchaseOnline = () => {
 
     return (
         <Container maxWidth="lg" sx={{ paddingTop: '80px' }}>
-            <Title variant="h2">Purchase Online on Hurst</Title>
+            <SectionTitle text="Purchase Online on Hurst" variant="h2" />
             <MyTabs value={value} onChange={handleChange}>
                 <Tab label="New Arrivals" {...a11yProps(0)} />
                 <Tab label="Best Seller" {...a11yProps(1)} />
