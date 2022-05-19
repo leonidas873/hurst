@@ -27,10 +27,30 @@ const FeaturedProducts = () => {
         slidesToScroll: 1,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     };
 
     return (
-        <Container maxWidth="lg" sx={{ paddingTop: '80px' }}>
+        <Container maxWidth="lg" sx={{ paddingTop: '80px', overflow: 'hidden' }}>
             <SectionTitle text="Featured Products" variant="h2" />
             <Slider {...settings} style={{ padding: '10px 15px 20px' }}>
                 <SingleProduct />
