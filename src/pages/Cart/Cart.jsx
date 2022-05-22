@@ -1,14 +1,19 @@
 import { CartRoutes } from "../../components/Cart/index";
 import styled from "@emotion/styled";
+import {Footer, Navbar} from "../../components";
 
 
 
 const Cart = () => {
-    return <CartStyled>
+    return <>
+    <Navbar/>
+    <CartStyled>
         <Container>
       <CartRoutes/>
       </Container>
     </CartStyled>
+    <Footer/>
+    </>
 }
 
 export default Cart;

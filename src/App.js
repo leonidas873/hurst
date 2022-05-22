@@ -1,13 +1,17 @@
 import './App.css';
-import { Cart } from './pages';
-import {Routes, Route} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { Home, Cart } from './pages';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-function App() {
-
+const App = () => {
   return (
-    <div className="App">
-      <Cart/>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/cart/*" element={<Cart/>} />
+      </Routes>
+    </>
   );
 }
 

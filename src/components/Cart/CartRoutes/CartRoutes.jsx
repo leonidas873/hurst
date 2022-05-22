@@ -29,16 +29,16 @@ console.log(activePage);
       }}
     >
       
-        <LinkStyled active={activePage=="shoppingCart"} onClick={()=>navigate("/")}>
+        <LinkStyled active={activePage=="shoppingCart"} onClick={()=>navigate("")}>
          shopping cart
         </LinkStyled>
-        <LinkStyled active={activePage=="wishlist"} onClick={()=>navigate("/whishlist")}>
+        <LinkStyled active={activePage=="wishlist"} onClick={()=>navigate("whishlist")}>
           Wshishlist
         </LinkStyled>
-        <LinkStyled active={activePage=="checkout"} onClick={()=>navigate("/checkout")}>
+        <LinkStyled active={activePage=="checkout"} onClick={()=>navigate("checkout")}>
           checkout
         </LinkStyled>
-        <LinkStyled active={activePage=="orderComplete"} onClick={()=>navigate("/order-complete")}>
+        <LinkStyled active={activePage=="orderComplete"} onClick={()=>navigate("order-complete")}>
           OrderComplete
         </LinkStyled>
 
