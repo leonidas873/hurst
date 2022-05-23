@@ -1,18 +1,18 @@
-import { CartRoutes } from "../../components/Cart/index";
+import { CartRoutes } from "../../Components/Cart/index";
 import styled from "@emotion/styled";
-import {Footer, Navbar} from "../../components";
+import { Footer, Navbar } from "../../Components";
 
 
 
 const Cart = () => {
     return <>
-    <Navbar/>
-    <CartStyled>
-        <Container>
-      <CartRoutes/>
-      </Container>
-    </CartStyled>
-    <Footer/>
+        <Navbar />
+        <CartStyled>
+            <Container>
+                <CartRoutes />
+            </Container>
+        </CartStyled>
+        <Footer />
     </>
 }
 
