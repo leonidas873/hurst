@@ -53,7 +53,7 @@ const FeaturedProducts = () => {
     };
 
     return (
-        <Container maxWidth="lg" sx={{ paddingTop: '80px', overflow: 'hidden' }}>
+        <Container maxWidth="lg" sx={{ paddingTop: '80px', paddingBottom: '30px', overflow: 'hidden' }}>
             <SectionTitle text="Featured Products" variant="h2" />
             <Slider {...settings} style={{ padding: '10px 15px 20px' }}>
                 <SingleProduct />
