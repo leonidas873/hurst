@@ -77,7 +77,7 @@ const DiscountComponent = () => {
                         }}
                     >
                         <Link to="/">
-                            <img style={{ display: 'block', margin: '0 auto' }} src="https://template.hasthemes.com/hurst-v1/hurst/img/product/up-comming.jpg" alt="discount" />
+                            <img style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '350px' }} src="https://template.hasthemes.com/hurst-v1/hurst/img/product/up-comming.jpg" alt="discount" />
                         </Link>
                         <UpCommingDetails>
                             <Link to="/">Indoor Furniture</Link>
