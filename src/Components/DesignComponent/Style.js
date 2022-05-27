@@ -66,7 +66,6 @@ export const BuyNow = styled(MyButton)({
     bottom: '30px',
     right: '30px',
     backgroundColor: '#efefef',
-    display: 'inline-block',
     height: '30px',
     lineHeight: '30px',
     overflow: 'hidden',
