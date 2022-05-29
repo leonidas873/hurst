@@ -7,20 +7,21 @@ import TextField from "@mui/material/TextField";
 import { Button, MenuItem, Select } from "@mui/material";
 import { StyledForm } from "./styles";
 import { Box } from "@mui/system";
+import { MainButton } from "../../Common";
 
 const validationSchema = yup.object({
-  // name: yup
-  //   .string("Enter your email")
-  //   .required("name is required"),
-  // email: yup
-  //   .string("Enter your email")
-  //   .required("email is required"),
-  // mobile: yup
-  //   .number("Enter your email")
-  //   .required("mobile is required"),
-  // company: yup
-  //   .string("Enter your email")
-  //   .required("company is required"),
+  name: yup
+    .string("Enter your name")
+    .required("name is required"),
+  email: yup
+    .string("Enter your email")
+    .required("email is required"),
+  mobile: yup
+    .number("Enter your phone")
+    .required("mobile is required"),
+  company: yup
+    .string("Enter your company")
+    .required("company is required"),
 });
 
 const Checkout = ({ setActivePage }) => {
@@ -40,6 +41,7 @@ const Checkout = ({ setActivePage }) => {
       state: "",
       town: "",
       address: "",
+      
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -64,6 +66,19 @@ const Checkout = ({ setActivePage }) => {
            
           }}
         >
+          <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            "& > p span": {
+              color:'#C87065'
+            }}
+          }
+          >
+            <h3>BILLING DETAILS</h3>
+            <p>Order total: <span>122$</span></p>
+          </Box>
           <TextField
             fullWidth
             id="name"
@@ -110,8 +125,9 @@ const Checkout = ({ setActivePage }) => {
             value={formik.country}
             onChange={formik.handleChange}
             defaultValue={" "}
+            
           >
-            <MenuItem value=" ">
+            <MenuItem selected value=" ">
               <em>country</em>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
@@ -155,11 +171,9 @@ const Checkout = ({ setActivePage }) => {
             onChange={formik.handleChange}
             value={formik.address}
           />
-
-<StyledButton color="primary" variant="contained" fullWidth type="submit">
-          place order
-        </StyledButton>
-
+<StyledButton>
+<MainButton name={"place order"} altName={"place order"}/>
+</StyledButton>
         </Box>
 
         
