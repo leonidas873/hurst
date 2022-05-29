@@ -9,7 +9,8 @@ export const CheckoutStyled = styled('div')(({
     
     "&":{
         backgroundColor:'white',
-        padding:'40px'
+        padding:'40px',
+        
     }
     
   }));
@@ -20,21 +21,34 @@ export const CheckoutStyled = styled('div')(({
     "&":{
         backgroundColor:'white',
         
-    }
+    },
+    "& .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root, input::placeholder, textarea":{
+      color: "#6669",
+      opacity:1
+      
+  },
+  "& textarea":{
+    width:'100% !important'
+}
     
   }));
 
   export const StyledButton = styled(Button)(({
     
     "&":{
-        backgroundColor:'#c87065',
+        
         width:"min-content",
         whiteSpace:'nowrap',
         margin:'auto'
         
     },
-    "&:hover":{
-        backgroundColor:"#c8a165"
-    }
-    
+    "& > button":{
+        backgroundColor:'#C87065',
+        color:'white'
+    },
+    "& > button:hover":{
+      backgroundColor:'#C87065',
+      color:'white'    
+  }
+
   }));
