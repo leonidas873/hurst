@@ -7,5 +7,6 @@ import FromTheBlog from './FromTheBlog/FromTheBlog'
 import Brand from './Brand/Brand'
 import DesignComponent from './DesignComponent/DesignComponent'
 import DiscountComponent from './DiscountComponent/DiscountComponent'
+import { HeroBanner } from './Common'
 
-export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent }
+export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent, HeroBanner }
