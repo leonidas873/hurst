@@ -159,3 +159,12 @@ export const Results = styled('p')({
     margin: '0',
     color: '#666',
 })
+
+export const PaginationPaper = styled(Paper)({
+    height: '50px',
+    lineHeight: '50px',
+    padding: '0 30px',
+    marginTop: '30px',
+    display: 'flex',
+    justifyContent: 'center'
+})

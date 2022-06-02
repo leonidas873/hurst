@@ -1,8 +1,9 @@
 import React from 'react'
-import { Box, Container, Slider } from '@mui/material'
-import { CategoriesPaper, CategoriesContainer, SubList, PriceRange, SizeContainer, ColorContainer, Results } from './Style'
-import { Link } from 'react-router-dom';
+import { Box, Container, Grid, Pagination, PaginationItem, Slider } from '@mui/material'
+import { CategoriesPaper, CategoriesContainer, SubList, PriceRange, SizeContainer, ColorContainer, Results, PaginationPaper } from './Style'
+import { Link, useLocation } from 'react-router-dom';
 import SingleFilter from '../SingleFilter/SingleFilter';
+import { SingleBlog } from '../Common';
 
 const colorData = [
     {
@@ -53,6 +54,10 @@ const BlogComponent = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
+    const page = parseInt(query.get('page') || '1', 10);
 
     return (
         <Container maxWidth="lg" sx={{ paddingTop: '80px', paddingBottom: '80px' }}>
@@ -150,6 +155,48 @@ const BlogComponent = () => {
                 </SingleFilter>
                 <Results>Showing 01-09 of 17 Results</Results>
             </CategoriesPaper>
+            <Grid container spacing={2}>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+                <Grid item sm={12} md={6} lg={4}>
+                    <SingleBlog />
+                </Grid>
+            </Grid>
+            <PaginationPaper elevation={0}>
+                <Pagination
+                    page={page}
+                    count={10}
+                    renderItem={(item) => (
+                        <PaginationItem
+                            component={Link}
+                            to={`/blog${item.page === 1 ? '' : `?page=${item.page}`}`}
+                            {...item}
+                        />
+                    )}
+                />
+            </PaginationPaper>
         </Container>
     )
 }
