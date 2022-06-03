@@ -11,5 +11,6 @@ import { HeroBanner } from './Common'
 import LoginComponent from './LoginComponent/LoginComponent'
 import RegisterComponent from './RegisterComponent/RegisterComponent'
 import BlogComponent from './BlogComponent/BlogComponent'
+import ContactComponent from './ContactComponent/ContactComponent'
 
-export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent, HeroBanner, LoginComponent, RegisterComponent, BlogComponent }
+export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent, HeroBanner, LoginComponent, RegisterComponent, BlogComponent, ContactComponent }
