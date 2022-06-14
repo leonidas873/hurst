@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Grid, } from '@mui/material'
-import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows } from './Style'
+import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
@@ -117,7 +117,17 @@ const SingleProductComponent = () => {
                         </ImageContainer>
                     </Grid>
                     <Grid item xs={12} md={8}>
-                        asd
+                        <DescHeader>
+                            <h4>dummy Product name</h4>
+                            <div>
+                                <MyRating name="read-only" value="3" readOnly />
+                                <span>(27 Rating)</span>
+                            </div>
+                        </DescHeader>
+                        <Details>
+                            <span>$ 56.20</span>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humou or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum.</p>
+                        </Details>
                     </Grid>
                 </Grid>
             </MyPaper>

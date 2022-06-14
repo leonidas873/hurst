@@ -1,5 +1,5 @@
 import { styled } from "@mui/system";
-import { Dialog, Paper } from "@mui/material";
+import { Dialog, Paper, Rating } from "@mui/material";
 
 export const MyPaper = styled(Paper)({
     padding: '30px 15px 30px 30px',
@@ -101,7 +101,6 @@ export const ModalDesc = styled('div')({
 })
 
 export const Arrows = styled('a')((props) => ({
-    // background: '#fff',
     left: props.type === "next" ? 'auto' : '0',
     right: props.type === "next" ? '0' : 'auto',
     position: 'absolute',
@@ -124,3 +123,55 @@ export const Arrows = styled('a')((props) => ({
         fontSize: '40px',
     },
 }))
+
+export const DescHeader = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+
+    '& h4': {
+        fontSize: '16px',
+        lineHeight: '18px',
+        textTransform: 'uppercase',
+        fontFamily: 'bree serif',
+        marginBottom: '5px',
+        fontWeight: 500,
+        color: '#434343',
+    },
+
+    '& > div': {
+        display: 'flex',
+        alignItems: 'center',
+    },
+
+    '& > div > span': {
+        color: '#666',
+        marginLeft: '5px',
+    },
+})
+
+export const MyRating = styled(Rating)({
+    fontSize: '1rem',
+    margin: '5px 0',
+
+    '& span': {
+        color: '#c87065',
+    }
+})
+
+export const Details = styled('div')({
+    '& span': {
+        display: 'block',
+        color: '#c87065',
+        fontSize: '18px',
+        fontWeight: '700',
+        lineHeight: '28px',
+        margin: '10px 0 20px 0',
+    },
+
+    '& p': {
+        fontWeight: '400',
+        marginBottom: '30px',
+        color: '#666',
+    }
+})
