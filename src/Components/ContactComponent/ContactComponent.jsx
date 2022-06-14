@@ -4,13 +4,14 @@ import { MyPaper, MyMainButton } from './Style'
 import { IoLocationSharp } from 'react-icons/io5'
 import { HiPhone } from 'react-icons/hi'
 import { RiMessage2Fill } from 'react-icons/ri'
+import GoogleMap from 'google-map-react';
 
 const ContactComponent = () => {
     return (
         <Container maxWidth="lg" sx={{ paddingTop: '80px', paddingBottom: '80px' }}>
             <MyPaper elevation={0}>
                 <Grid container spacing={3}>
-                    <Grid item md={4}>
+                    <Grid item xs={12} md={4}>
                         <h4>CONTACT DETAILS</h4>
                         <ul>
                             <li>
@@ -43,12 +44,17 @@ const ContactComponent = () => {
                             <MyMainButton altName="submit message">submit message</MyMainButton>
                         </form>
                     </Grid>
-                    <Grid item md={8}>
-                        asd
+                    <Grid item xs={12} md={8}>
+                        <div style={{ height: '100%', minHeight: '500px', width: '100%' }}>
+                            <GoogleMap
+                                center={[41.716667, 44.783333]}
+                                zoom={9}
+                            />
+                        </div>
                     </Grid>
                 </Grid>
             </MyPaper>
-        </Container>
+        </Container >
     )
 }
 
