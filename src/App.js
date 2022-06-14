@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { Home, Cart, Login, Blog, Contact } from './Pages';
+import { Home, Cart, Login, Blog, Contact, SingleProduct } from './Pages';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -13,6 +13,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/singleProduct" element={<SingleProduct />} />
       </Routes>
     </>
   );

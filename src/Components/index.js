@@ -12,5 +12,6 @@ import LoginComponent from './LoginComponent/LoginComponent'
 import RegisterComponent from './RegisterComponent/RegisterComponent'
 import BlogComponent from './BlogComponent/BlogComponent'
 import ContactComponent from './ContactComponent/ContactComponent'
+import SingleProductComponent from './SingleProductComponent/SingleProductComponent'
 
-export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent, HeroBanner, LoginComponent, RegisterComponent, BlogComponent, ContactComponent }
+export { Navbar, HeroSlider, PurchaseOnline, Footer, FeaturedProducts, FromTheBlog, Brand, DiscountComponent, DesignComponent, HeroBanner, LoginComponent, RegisterComponent, BlogComponent, ContactComponent, SingleProductComponent }
