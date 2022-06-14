@@ -49,7 +49,6 @@ const NextArrow = ({ onClick }) => {
 const SingleProductComponent = () => {
 
     const [visible, setVisible] = useState(false)
-    const [slideIndex, setSlideIndex] = useState(0)
 
     const settings = {
         dots: false,
@@ -79,7 +78,7 @@ const SingleProductComponent = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4}>
                         <ImageContainer>
-                            <Slider {...settings} beforeChange={(e) => setSlideIndex(e + 1)} >
+                            <Slider {...settings}>
                                 {
                                     imageArray.map(item =>
                                         <img key={item.key} src={item.src} altName="product" />
@@ -91,7 +90,7 @@ const SingleProductComponent = () => {
                             </span>
                             <MyDialog onClose={() => setVisible(false)} open={visible}>
                                 <div>
-                                    <Slider {...settingsModal} initialSlide={slideIndex === imageArray.length ? 0 : slideIndex}>
+                                    <Slider {...settingsModal}>
                                         {imageArray.map((item, index) =>
                                             <>
                                                 <img
