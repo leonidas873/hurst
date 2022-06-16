@@ -191,7 +191,7 @@ const SingleProductComponent = () => {
                         <FlexContainer>
                             <AmountContainer>
                                 <button onClick={() => setAmount(parseInt(amount) > 0 ? parseInt(amount) - 1 : parseInt(amount))}>-</button>
-                                <input onChange={(e) => setAmount(e.target.value)} value={amount} type="number" name="amount" />
+                                <input onChange={(e) => setAmount(e.target.value > 0 ? parseInt(e.target.value) : '')} value={amount} type="number" name="amount" />
                                 <button onClick={() => setAmount(parseInt(amount) + 1)}>+</button>
                             </AmountContainer>
                             <ProductActionsComponent />
