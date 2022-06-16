@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Container, Grid, } from '@mui/material'
-import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details } from './Style'
+import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
+import { ProductActionsComponent } from '../Common';
 
 const imageArray = [
     {
@@ -30,6 +31,30 @@ const imageArray = [
     },
 ]
 
+const colorArray = [
+    {
+        color: '#ffa07a',
+    },
+    {
+        color: '#e9967a',
+    },
+    {
+        color: '#fe5858',
+    },
+    {
+        color: '#00b2ee',
+    },
+    {
+        color: '#00eeb3',
+    },
+    {
+        color: '#8dc63f',
+    },
+    {
+        color: '#c38b4b',
+    },
+]
+
 const PrevArrow = ({ onClick }) => {
     return (
         <Arrows onClick={onClick}>
@@ -49,6 +74,7 @@ const NextArrow = ({ onClick }) => {
 const SingleProductComponent = () => {
 
     const [visible, setVisible] = useState(false)
+    const [amount, setAmount] = useState(0)
 
     const settings = {
         dots: false,
@@ -128,6 +154,48 @@ const SingleProductComponent = () => {
                             <span>$ 56.20</span>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humou or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum.</p>
                         </Details>
+                        <ColorProperty>
+                            <ul>
+                                <li>
+                                    <p>Color</p>
+                                </li>
+                                {colorArray.map(item =>
+                                    <li>
+                                        <span onClick={(e) => e.target.classList.toggle('selected')} style={{ backgroundColor: item.color }} />
+                                    </li>
+                                )}
+                            </ul>
+                        </ColorProperty>
+                        <SizeProperty>
+                            <ul>
+                                <li>
+                                    <p>Size</p>
+                                </li>
+                                <li>
+                                    <span onClick={(e) => e.target.classList.toggle('selected')}>M</span>
+                                </li>
+                                <li>
+                                    <span onClick={(e) => e.target.classList.toggle('selected')}>S</span>
+                                </li>
+                                <li>
+                                    <span onClick={(e) => e.target.classList.toggle('selected')}>L</span>
+                                </li>
+                                <li>
+                                    <span onClick={(e) => e.target.classList.toggle('selected')}>SL</span>
+                                </li>
+                                <li>
+                                    <span onClick={(e) => e.target.classList.toggle('selected')}>XL</span>
+                                </li>
+                            </ul>
+                        </SizeProperty>
+                        <FlexContainer>
+                            <AmountContainer>
+                                <button onClick={() => setAmount(parseInt(amount) > 0 ? parseInt(amount) - 1 : parseInt(amount))}>-</button>
+                                <input onChange={(e) => setAmount(e.target.value)} value={amount} type="number" name="amount" />
+                                <button onClick={() => setAmount(parseInt(amount) + 1)}>+</button>
+                            </AmountContainer>
+                            <ProductActionsComponent />
+                        </FlexContainer>
                     </Grid>
                 </Grid>
             </MyPaper>

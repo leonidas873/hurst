@@ -175,3 +175,154 @@ export const Details = styled('div')({
         color: '#666',
     }
 })
+
+export const ColorProperty = styled('div')({
+    '& ul': {
+        marginBottom: '20px',
+    },
+
+    '& ul li': {
+        lineHeight: 'inherit',
+        width: 'auto',
+        listStyle: 'none',
+        display: 'inline-block',
+    },
+
+    '& ul li p': {
+        color: '#434343',
+        display: 'block',
+        fontWeight: '700',
+        width: '55px',
+    },
+
+    '& ul li span': {
+        background: '#666',
+        display: 'inline-block',
+        height: '15px',
+        marginRight: '10px',
+        width: '15px',
+        cursor: 'pointer',
+        verticalAlign: 'middle',
+    },
+
+    '& ul li span:hover, ul li span.selected': {
+        outline: '1px solid #d6b98c',
+        outlineOffset: '1px',
+    }
+
+})
+
+export const SizeProperty = styled('div')({
+    '& ul': {
+        marginBottom: '35px',
+    },
+
+    '& ul li': {
+        lineHeight: 'inherit',
+        width: 'auto',
+        listStyle: 'none',
+        display: 'inline-block',
+        marginTop: '8px',
+    },
+
+    '& ul li p': {
+        color: '#434343',
+        display: 'block',
+        fontWeight: '700',
+        width: '55px',
+    },
+
+    '& ul li span': {
+        height: 'auto',
+        lineHeight: 'inherit',
+        marginRight: '10px',
+        width: 'auto',
+        fontWeight: 700,
+        textAlign: 'center',
+        color: '#434343',
+        cursor: 'pointer',
+        transition: 'all .3s ease 0s',
+        padding: '5px',
+    },
+
+    '& ul li span:hover, ul li span.selected': {
+        color: '#c8a165',
+    }
+})
+
+export const FlexContainer = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+})
+
+export const AmountContainer = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+    margin: '15px 20px 0 0',
+    backgroundColor: '#f6f6f6',
+
+    '& button': {
+        width: '70px',
+        height: '40px',
+        cursor: 'pointer',
+        float: 'left',
+        fontSize: '20px',
+        position: 'relative',
+        lineHeight: '40px',
+        textAlign: 'center',
+        border: 'none',
+        backgroundColor: 'transparent',
+        color: '#666',
+        transition: 'all .3s ease 0s',
+    },
+
+    '& button:hover': {
+        color: '#c8a165',
+    },
+
+    '& button:first-child::before': {
+        position: 'absolute',
+        content: '""',
+        background: '#999',
+        height: '14px',
+        right: '0',
+        top: '15px',
+        width: '1px',
+    },
+
+    '& button:last-child::before': {
+        position: 'absolute',
+        content: '""',
+        background: '#999',
+        height: '14px',
+        left: '0',
+        top: '15px',
+        width: '1px',
+    },
+
+    '& input': {
+        height: '40px',
+        fontSize: '16px',
+        margin: '0',
+        padding: '0',
+        textalign: 'center',
+        border: 'none',
+        backgroundColor: 'transparent',
+        transition: 'all 0.5s ease 0s',
+        textAlign: 'center',
+        color: '#666',
+    },
+
+    '& input:focus': {
+        outline: 'none',
+    },
+
+    '& input::-webkit-outer-spin-button, input::-webkit-inner-spin-button': {
+        "-webkitAppearance": 'none',
+    },
+
+    '& input[type=number]': {
+        "-moz-appearance": 'textfield',
+    },
+})
+
