@@ -1,5 +1,6 @@
 import { styled } from "@mui/system";
 import { Dialog, Paper, Rating } from "@mui/material";
+import Slider from "react-slick";
 
 export const MyPaper = styled(Paper)({
     padding: '30px 15px 30px 30px',
@@ -326,3 +327,50 @@ export const AmountContainer = styled('div')({
     },
 })
 
+export const MySlider = styled(Slider)({
+    marginTop: '38px',
+
+    '& .slick-list': {
+        width: 'calc(100% - 70px)',
+        margin: '0 auto',
+    },
+
+    '& .slick-slide': {
+        padding: '0 10px',
+    },
+
+    '& .slick-current img': {
+        border: '1px solid #d6b98c',
+    }
+})
+
+export const ArrowsDetails = styled('a')((props) => ({
+    left: props.type === "next" ? 'auto' : '0',
+    right: props.type === "next" ? '0' : 'auto',
+    position: 'absolute',
+    top: 0,
+    zIndex: '999',
+    transition: 'all .3s ease 0s',
+    cursor: 'pointer',
+    width: '25px',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#f6f6f6',
+
+    '&:hover': {
+        backgroundColor: '#c8a165',
+    },
+
+    '& svg': {
+        fontSize: '25px',
+        color: '#999',
+        transition: 'all .3s ease 0s',
+    },
+
+    '&:hover svg': {
+        color: '#fff',
+    },
+
+}))

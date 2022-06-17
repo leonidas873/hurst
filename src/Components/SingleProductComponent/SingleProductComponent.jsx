@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Grid, } from '@mui/material'
-import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer } from './Style'
+import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
@@ -71,6 +71,22 @@ const NextArrow = ({ onClick }) => {
     )
 }
 
+const PrevArrowDetails = ({ onClick }) => {
+    return (
+        <ArrowsDetails onClick={onClick}>
+            <HiOutlineChevronLeft />
+        </ArrowsDetails>
+    )
+}
+
+const NextArrowDetails = ({ onClick }) => {
+    return (
+        <ArrowsDetails type="next" onClick={onClick}>
+            <HiOutlineChevronRight />
+        </ArrowsDetails>
+    )
+}
+
 const SingleProductComponent = () => {
 
     const [visible, setVisible] = useState(false)
@@ -83,6 +99,18 @@ const SingleProductComponent = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+    };
+
+    const settingsDetails = {
+        dots: false,
+        infinite: true,
+        focusOnSelect: true,
+        arrows: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: <PrevArrowDetails />,
+        nextArrow: <NextArrowDetails />,
     };
 
     const settingsModal = {
@@ -137,7 +165,6 @@ const SingleProductComponent = () => {
                                             </>
                                         )}
                                     </Slider>
-
                                 </div>
                             </MyDialog>
                         </ImageContainer>
@@ -196,6 +223,13 @@ const SingleProductComponent = () => {
                             </AmountContainer>
                             <ProductActionsComponent />
                         </FlexContainer>
+                        <MySlider {...settingsDetails}>
+                            {
+                                imageArray.map(item =>
+                                    <img key={item.key} src={item.src} altName="product" />
+                                )
+                            }
+                        </MySlider>
                     </Grid>
                 </Grid>
             </MyPaper>
