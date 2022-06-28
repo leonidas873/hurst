@@ -8,6 +8,16 @@ export const MyPaper = styled(Paper)({
 
 export const ImageContainer = styled('div')({
     position: 'relative',
+    height: '100%',
+
+    '& div': {
+        height: '100%',
+    },
+
+    '& img': {
+        height: '100%',
+        objectFit: 'cover',
+    },
 
     '& span': {
         position: 'absolute',

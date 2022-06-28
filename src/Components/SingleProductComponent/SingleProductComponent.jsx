@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Grid, } from '@mui/material'
+import { Container, Grid, Tab, Tabs, } from '@mui/material'
 import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
@@ -87,6 +87,26 @@ const NextArrowDetails = ({ onClick }) => {
     )
 }
 
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <div sx={{ p: 3 }}>
+                    <h1>{children}</h1>
+                </div>
+            )}
+        </div>
+    );
+}
+
 const SingleProductComponent = () => {
 
     const [visible, setVisible] = useState(false)
@@ -126,16 +146,29 @@ const SingleProductComponent = () => {
         nextArrow: <NextArrow />,
     };
 
+    const [value, setValue] = React.useState(0);
+
+    const handleTabChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const a11yProps = (index) => {
+        return {
+            id: `tab-${index}`,
+            'aria-controls': `tabpanel-${index}`,
+        };
+    }
+
     return (
         <Container maxWidth="lg" sx={{ paddingTop: '80px', paddingBottom: '80px' }}>
-            <MyPaper elevation={0}>
+            <MyPaper sx={{ marginBottom: '30px' }} elevation={0}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4}>
                         <ImageContainer>
                             <Slider {...settings}>
                                 {
                                     imageArray.map(item =>
-                                        <img key={item.key} src={item.src} altName="product" />
+                                        <img key={item.key} src={item.src} alt="product" />
                                     )
                                 }
                             </Slider>
@@ -151,7 +184,7 @@ const SingleProductComponent = () => {
                                                     width="100%"
                                                     key={item.key}
                                                     src={item.src}
-                                                    altName="product"
+                                                    alt="product"
                                                 />
                                                 <ModalDesc>
                                                     <div>
@@ -226,13 +259,33 @@ const SingleProductComponent = () => {
                         <MySlider {...settingsDetails}>
                             {
                                 imageArray.map(item =>
-                                    <img key={item.key} src={item.src} altName="product" />
+                                    <img key={item.key} src={item.src} alt="product" />
                                 )
                             }
                         </MySlider>
                     </Grid>
                 </Grid>
             </MyPaper>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={3}>
+                    <Tabs value={value} onChange={handleTabChange}>
+                        <Tab label="Item One" {...a11yProps(0)} />
+                        <Tab label="Item Two" {...a11yProps(1)} />
+                        <Tab label="Item Three" {...a11yProps(2)} />
+                    </Tabs>
+                </Grid>
+                <Grid item xs={12} md={9}>
+                    <TabPanel value={value} index={0}>
+                        Item One
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        Item Two
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        Item Three
+                    </TabPanel>
+                </Grid>
+            </Grid>
         </Container >
     )
 }
