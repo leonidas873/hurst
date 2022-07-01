@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Container, Grid, Tab, Tabs, } from '@mui/material'
-import { MyPaper, ImageContainer, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
+import { Container, Grid, Tab, } from '@mui/material'
+import { MyPaper, MyTabs, ImageContainer, Title, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
@@ -268,22 +268,28 @@ const SingleProductComponent = () => {
             </MyPaper>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={3}>
-                    <Tabs value={value} onChange={handleTabChange}>
-                        <Tab label="Item One" {...a11yProps(0)} />
-                        <Tab label="Item Two" {...a11yProps(1)} />
-                        <Tab label="Item Three" {...a11yProps(2)} />
-                    </Tabs>
+                    <MyTabs value={value} onChange={handleTabChange} orientation="vertical">
+                        <Tab label="Describtion" {...a11yProps(0)} />
+                        <Tab label="Reviews" {...a11yProps(1)} />
+                        <Tab label="Information" {...a11yProps(2)} />
+                        <Tab label="Tags" {...a11yProps(3)} />
+                    </MyTabs>
                 </Grid>
                 <Grid item xs={12} md={9}>
-                    <TabPanel value={value} index={0}>
-                        Item One
-                    </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        Item Two
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                        Item Three
-                    </TabPanel>
+                    <MyPaper elevation={0}>
+                        <TabPanel value={value} index={0}>
+                            <Title>dummy product name</Title>
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <Title>customer review</Title>
+                        </TabPanel>
+                        <TabPanel value={value} index={2}>
+                            <Title>product information</Title>
+                        </TabPanel>
+                        <TabPanel value={value} index={3}>
+                            <Title>tags</Title>
+                        </TabPanel>
+                    </MyPaper>
                 </Grid>
             </Grid>
         </Container >

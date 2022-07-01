@@ -1,5 +1,5 @@
 import { styled } from "@mui/system";
-import { Dialog, Paper, Rating } from "@mui/material";
+import { Dialog, Paper, Rating, Tabs } from "@mui/material";
 import Slider from "react-slick";
 
 export const MyPaper = styled(Paper)({
@@ -384,3 +384,45 @@ export const ArrowsDetails = styled('a')((props) => ({
     },
 
 }))
+
+export const MyTabs = styled(Tabs)({
+    '& .MuiTabs-indicator': {
+        display: 'none',
+    },
+
+    '& button': {
+        fontWeight: '700',
+        padding: '0 30px',
+        transition: 'all .3s ease 0s',
+        alignItems: 'flex-start',
+        backgroundColor: '#fff',
+        marginBottom: '5px',
+    },
+
+    '& .Mui-selected': {
+        backgroundColor: '#c8a165',
+        color: '#fff !important',
+    },
+})
+
+export const Title = styled('h3')({
+    fontSize: '16px',
+    fontWeight: '700',
+    lineHeight: '28px',
+    marginBottom: '30px',
+    color: '#434343',
+    fontFamily: 'Lato,sans-serif',
+    textTransform: 'uppercase',
+    paddingBottom: '10px',
+    position: 'relative',
+
+    '&::before': {
+        background: '#eee',
+        bottom: '0',
+        content: '""',
+        height: '3px',
+        left: '0',
+        position: 'absolute',
+        width: '50px',
+    },
+})
