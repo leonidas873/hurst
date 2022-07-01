@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Container, Grid, Tab, } from '@mui/material'
-import { MyPaper, MyTabs, ImageContainer, Title, MyDialog, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
+import { MyPaper, MyTabs, ImageContainer, Title, MyDialog, MyTabPanel, ModalDesc, Arrows, DescHeader, MyRating, Details, ColorProperty, SizeProperty, FlexContainer, AmountContainer, MySlider, ArrowsDetails } from './Style'
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 import { ProductActionsComponent } from '../Common';
+import LeaveReview from '../LeaveReview/LeaveReview';
 
 const imageArray = [
     {
@@ -87,7 +88,7 @@ const NextArrowDetails = ({ onClick }) => {
     )
 }
 
-function TabPanel(props) {
+const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
 
     return (
@@ -99,9 +100,9 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <div sx={{ p: 3 }}>
-                    <h1>{children}</h1>
-                </div>
+                <MyTabPanel>
+                    {children}
+                </MyTabPanel>
             )}
         </div>
     );
@@ -279,15 +280,25 @@ const SingleProductComponent = () => {
                     <MyPaper elevation={0}>
                         <TabPanel value={value} index={0}>
                             <Title>dummy product name</Title>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
                         </TabPanel>
                         <TabPanel value={value} index={1}>
                             <Title>customer review</Title>
+                            <LeaveReview />
                         </TabPanel>
                         <TabPanel value={value} index={2}>
                             <Title>product information</Title>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
                         </TabPanel>
                         <TabPanel value={value} index={3}>
                             <Title>tags</Title>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
                         </TabPanel>
                     </MyPaper>
                 </Grid>

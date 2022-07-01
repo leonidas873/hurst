@@ -426,3 +426,9 @@ export const Title = styled('h3')({
         width: '50px',
     },
 })
+
+export const MyTabPanel = styled('div')({
+    '& p': {
+        marginBottom: '15px'
+    }
+})
