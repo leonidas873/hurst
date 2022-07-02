@@ -8,7 +8,8 @@ const Shop = () => {
     return <MainLayout>
         <Box sx={{
             maxWidth:'1200px',
-            margin:'auto'
+            margin:'auto',
+            padding:'0 20px'
         }}>
         <Filters/>
         <ShopProducts/>
