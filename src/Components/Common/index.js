@@ -4,5 +4,6 @@ import SingleProduct from "./SingleProduct/SingleProduct";
 import SingleBlog from "./SingleBlog/SingleBlog";
 import HeroBanner from "./HeroBanner/HeroBanner";
 import ProductActionsComponent from "./ProductActionsComponent/ProductActionsComponent";
+import SingleReview from "./SingleReview/SingleReview";
 
-export { MainButton, SectionTitle, SingleProduct, SingleBlog, HeroBanner, ProductActionsComponent }
+export { MainButton, SectionTitle, SingleProduct, SingleBlog, HeroBanner, ProductActionsComponent, SingleReview }

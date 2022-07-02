@@ -4,7 +4,7 @@ import { MyPaper, MyTabs, ImageContainer, Title, MyDialog, MyTabPanel, ModalDesc
 import Slider from "react-slick";
 import { AiOutlineZoomIn, AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
-import { ProductActionsComponent } from '../Common';
+import { ProductActionsComponent, SingleReview } from '../Common';
 import LeaveReview from '../LeaveReview/LeaveReview';
 
 const imageArray = [
@@ -53,6 +53,23 @@ const colorArray = [
     },
     {
         color: '#c38b4b',
+    },
+]
+
+const reviewArray = [
+    {
+        key: 1,
+        src: 'https://template.hasthemes.com/hurst-v1/hurst/img/reviewer/1.jpg',
+        name: 'GERALD BARNES',
+        time: '27 Jun, 2021 at 2:30pm',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.',
+    },
+    {
+        key: 2,
+        src: 'https://template.hasthemes.com/hurst-v1/hurst/img/reviewer/1.jpg',
+        name: 'GERALD BARNES',
+        time: '27 Jun, 2021 at 2:30pm',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.',
     },
 ]
 
@@ -132,6 +149,20 @@ const SingleProductComponent = () => {
         slidesToScroll: 1,
         prevArrow: <PrevArrowDetails />,
         nextArrow: <NextArrowDetails />,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+        ],
     };
 
     const settingsModal = {
@@ -286,6 +317,15 @@ const SingleProductComponent = () => {
                         </TabPanel>
                         <TabPanel value={value} index={1}>
                             <Title>customer review</Title>
+                            {reviewArray.map(item =>
+                                <SingleReview
+                                    key={item.key}
+                                    src={item.src}
+                                    name={item.name}
+                                    time={item.time}
+                                    text={item.text}
+                                />
+                            )}
                             <LeaveReview />
                         </TabPanel>
                         <TabPanel value={value} index={2}>

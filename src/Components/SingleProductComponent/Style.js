@@ -264,6 +264,10 @@ export const SizeProperty = styled('div')({
 export const FlexContainer = styled('div')({
     display: 'flex',
     alignItems: 'center',
+
+    '@media screen and (max-width: 768px)': {
+        flexDirection: "column",
+    },
 })
 
 export const AmountContainer = styled('div')({
@@ -285,6 +289,10 @@ export const AmountContainer = styled('div')({
         backgroundColor: 'transparent',
         color: '#666',
         transition: 'all .3s ease 0s',
+
+        '@media screen and (max-width: 768px)': {
+            width: '100%',
+        }
     },
 
     '& button:hover': {
@@ -334,6 +342,11 @@ export const AmountContainer = styled('div')({
 
     '& input[type=number]': {
         "-moz-appearance": 'textfield',
+    },
+
+    '@media screen and (max-width: 768px)': {
+        width: "100%",
+        marginRight: '0',
     },
 })
 
