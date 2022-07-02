@@ -11,12 +11,13 @@ const Filters = ()=> {
         display:'flex',
         justifyContent:'flex-start',
         alignItems:'center',
-        backgroundColor:'#e4f0e6',
+        backgroundColor:'white',
         height:'50px',
-        marginBottom:'20px',
+        margin:'30px 0',
         gap:'20px',
         boxSizing:'border-box',
-        padding:'0 30px'
+        padding:'0 30px',
+        zIndex:12314512313
     }}
     >
         <Calories/>

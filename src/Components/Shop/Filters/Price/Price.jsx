@@ -42,7 +42,24 @@ const Price = () => {
 export default Price;
 
 
-const SliderStyled = styled(Slider)`
-    color:#c8a165;;
 
-`
+const SliderStyled = styled(Slider)({
+  color: '#c8a165',
+  height: 3,
+  '& .MuiSlider-track': {
+    border: 'none',
+  },
+  '& .MuiSlider-thumb': {
+    height: 15,
+    width: 15,
+    backgroundColor: '#fff',
+    border: '2px solid currentColor',
+    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
+      boxShadow: 'inherit',
+    },
+    '&:before': {
+      display: 'none',
+    },
+  },
+
+});

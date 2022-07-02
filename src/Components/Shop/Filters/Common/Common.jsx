@@ -37,6 +37,7 @@ export const DropDown = ({ children, title }) => {
 
 export const Dropdown = styled.div`
   position: relative;
+  z-index:12314512313;
 `;
 
 export const Title = styled.div`
