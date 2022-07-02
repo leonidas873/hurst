@@ -391,6 +391,7 @@ export const MyTabs = styled(Tabs)({
     },
 
     '& button': {
+        maxWidth: '100%',
         fontWeight: '700',
         padding: '0 30px',
         transition: 'all .3s ease 0s',
