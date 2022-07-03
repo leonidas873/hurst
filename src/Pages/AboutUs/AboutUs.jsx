@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { Article, Team } from "../../components/AboutUs";
-import { MainLayout } from "../../components";
+import { Article, Team } from "../../Components/AboutUs";
+import { MainLayout } from "../../Components";
 
 const AboutUs = () => {
     return <MainLayout>

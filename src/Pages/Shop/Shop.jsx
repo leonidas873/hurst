@@ -1,8 +1,8 @@
 import { Box } from "@mui/system";
-import { MainLayout } from "../../components";
-import Filters from "../../components/Shop/Filters/Filters";
-import Pagination from "../../components/Shop/Pagination/Pagination";
-import ShopProducts from "../../components/Shop/ShopProducts/ShopProducts";
+import { MainLayout } from "../../Components";
+import Filters from "../../Components/Shop/Filters/Filters";
+import Pagination from "../../Components/Shop/Pagination/Pagination";
+import ShopProducts from "../../Components/Shop/ShopProducts/ShopProducts";
 
 const Shop = () => {
     return <MainLayout>

@@ -1,5 +1,5 @@
-import { MainLayout } from "../../components";
-import { BlogImage } from "../../components/BlogDetails";
+import { MainLayout } from "../../Components";
+import { BlogImage } from "../../Components/BlogDetails";
 import { Box } from "@mui/system";
 
 

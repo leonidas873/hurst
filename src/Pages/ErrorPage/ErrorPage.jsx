@@ -1,7 +1,7 @@
 import { Box, Container,  Typography } from "@mui/material";
 import React from "react";
-import { MainLayout } from "../../components";
-import { MainButton } from "../../components/Common";
+import { MainLayout } from "../../Components";
+import { MainButton } from "../../Components/Common";
 import {BiSearch} from 'react-icons/bi';
 import { Link } from "react-router-dom";
 
