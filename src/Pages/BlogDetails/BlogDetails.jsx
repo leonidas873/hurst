@@ -1,10 +1,11 @@
-import { MainLayout } from "../../Components";
+import { HeroBanner, MainLayout } from "../../Components";
 import { BlogImage } from "../../Components/BlogDetails";
 import { Box } from "@mui/system";
 
 
 const BlogDetails = () => {
     return <MainLayout>
+         <HeroBanner text="single-blog" breadcrumbs={{ current: 'single-blog', links: [{ text: 'home', href: '/' }] }} />
         <Box
         sx={{
             padding:'20px',

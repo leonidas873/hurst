@@ -6,6 +6,7 @@ import ShopProducts from "../../Components/Shop/ShopProducts/ShopProducts";
 
 const Shop = () => {
     return <MainLayout>
+         <HeroBanner text="shop" breadcrumbs={{ current: 'shop', links: [{ text: 'home', href: '/' }] }} />
         <Box sx={{
             maxWidth:'1200px',
             margin:'auto',
