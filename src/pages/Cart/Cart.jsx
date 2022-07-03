@@ -6,13 +6,13 @@ import {Footer, Navbar} from "../../Components";
 
 const Cart = () => {
     return <>
-    <Navbar/>
-    <CartStyled>
-        <Container>
-      <CartRoutes/>
-      </Container>
-    </CartStyled>
-    <Footer/>
+        <Navbar />
+        <CartStyled>
+            <Container>
+                <CartRoutes />
+            </Container>
+        </CartStyled>
+        <Footer />
     </>
 }
 

@@ -83,6 +83,8 @@ export const ProductInfo = styled('div')({
 
 export const MyIconButton = styled(IconButton)({
     position: 'relative',
+    width: '25px',
+    height: '25px',
 
     '& .burgerSpan': {
         position: 'absolute',
@@ -123,7 +125,7 @@ export const MyIconButton = styled(IconButton)({
 
     '& .closeSpan': {
         position: 'absolute',
-        top: 0,
+        top: '50%',
         left: 0,
         width: '25px',
         height: '2px',
