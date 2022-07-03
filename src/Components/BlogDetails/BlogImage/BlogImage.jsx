@@ -18,7 +18,7 @@ const BlogImage = () => {
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
-        gap:'6px',
+        gap:'7px',
         flexDirection:'column',
         '& h5':{
             color:'red',
