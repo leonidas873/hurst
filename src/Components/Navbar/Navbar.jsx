@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { Box, Toolbar, Badge, Popover, List, ListItemButton, Drawer, Typography } from '@mui/material'
+import { Box, Toolbar, Badge, Popover, List, ListItemButton, Drawer, Typography, Menu, Fade } from '@mui/material'
 import { MyAppBar, Image, MyListItem, MyListItemText, AllProducts, SingleProduct, ImageContainer, ProductInfo, MyIconButton, CloseIconButton, Total, RightIconButton } from './Style';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
+import { FiLogOut } from 'react-icons/fi'
 
 const Navbar = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false)
 
-    const handlePopoverOpen = (event) => {
+    const handleOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handlePopoverClose = () => {
+    const handleClose = () => {
         setAnchorEl(null)
     };
 
@@ -23,7 +24,7 @@ const Navbar = () => {
         <>
             <Box sx={{ flexGrow: 1 }}>
                 <MyAppBar position="static">
-                    <Toolbar sx={{ py: 3, }}>
+                    <Toolbar sx={{ py: 3, width: '100%', justifyContent: 'space-between' }}>
                         <MyIconButton
                             color="inherit"
                             sx={{ mr: 2, width: '25px', height: '15px' }}
@@ -61,37 +62,46 @@ const Navbar = () => {
                                 </List>
                             </Box>
                         </Drawer>
-                        <Link to="/" style={{ margin: 'auto' }}>
+                        <Link to="/" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
                             <Image src="https://template.hasthemes.com/hurst-v1/hurst/img/logo/logo.png" alt="logo" />
                         </Link>
-                        <RightIconButton
-                            size="medium"
-                            edge="start"
-                            aria-label="cart"
-                            sx={{ ml: 2 }}
-                            onMouseEnter={handlePopoverOpen}
-                            onMouseLeave={handlePopoverClose}
-                        >
-                            <Badge badgeContent={4}>
-                                <FaShoppingCart />
-                            </Badge>
-                        </RightIconButton>
-                        <Popover
-                            sx={{
-                                pointerEvents: 'none',
-                                mt: 4,
+                        <div>
+                            {
+                                localStorage.getItem('token') &&
+                                <>
+                                    <span>{JSON.parse(localStorage.getItem('user'))}</span>
+                                    <RightIconButton
+                                        sx={{ ml: 2 }}
+                                        onClick={() => {
+                                            localStorage.removeItem('token');
+                                            localStorage.removeItem('user');
+                                            window.location.reload()
+                                        }}
+                                    >
+                                        <FiLogOut />
+                                    </RightIconButton>
+                                </>
+                            }
+                            <RightIconButton
+                                size="medium"
+                                edge="start"
+                                aria-label="cart"
+                                sx={{ ml: 2 }}
+                                onMouseEnter={handleOpen}
+                            >
+                                <Badge badgeContent={4}>
+                                    <FaShoppingCart />
+                                </Badge>
+                            </RightIconButton>
+                        </div>
+                        <Menu
+                            MenuListProps={{
+                                'aria-labelledby': 'fade-button',
                             }}
-                            open={open}
                             anchorEl={anchorEl}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'right',
-                            }}
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            onClose={handlePopoverClose}
+                            open={open}
+                            onClose={() => setAnchorEl(null)}
+                            TransitionComponent={Fade}
                         >
                             <Box width={500} sx={{ py: 3, px: 2 }}>
                                 <Typography
@@ -133,7 +143,8 @@ const Navbar = () => {
                                 </AllProducts>
                                 <Total>total: ${"500"}</Total>
                             </Box>
-                        </Popover>
+                        </Menu>
+
                     </Toolbar>
                 </MyAppBar>
             </Box>
