@@ -69,14 +69,6 @@ export const MyPaper = styled(Paper)({
     '& a:hover': {
         color: '#c8a165',
     },
-
-    '& label': {
-        color: '#666',
-        fontFamily: 'Lato,sans-serif',
-        fontSize: '13px',
-        fontWeight: '400',
-        lineHeight: '20px',
-    }
 })
 
 export const MyMainButton = styled(MyButton)({
