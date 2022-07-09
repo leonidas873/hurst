@@ -2,21 +2,21 @@ import { Grid } from '@mui/material';
 import React, { useState } from 'react'
 import { Title, MyRating, RatingTitle, MyMainButton, MyForm } from './Style'
 
-const LeaveReview = () => {
+const LeaveReview = ({ratingOff}) => {
 
     const [value, setValue] = useState(0);
 
     return (
         <>
             <Title>LEAVE YOUR REVIW</Title>
-            <RatingTitle>Your rating</RatingTitle>
+           {Boolean(ratingOff) || <><RatingTitle>Your rating</RatingTitle>
             <MyRating
                 name="simple-controlled"
                 value={value}
                 onChange={(event, newValue) => {
                     setValue(newValue);
                 }}
-            />
+            /></>}
             <MyForm action="">
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>

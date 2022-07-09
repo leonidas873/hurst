@@ -1,5 +1,5 @@
 import { HeroBanner, MainLayout } from "../../Components";
-import { BlogImage } from "../../Components/BlogDetails";
+import { BlogComments, BlogImage, BlogText } from "../../Components/BlogDetails";
 import { Box } from "@mui/system";
 
 
@@ -14,6 +14,8 @@ const BlogDetails = () => {
         }}
         >
         <BlogImage/>
+        <BlogText/>
+        <BlogComments/>
         </Box>
 
     </MainLayout>
