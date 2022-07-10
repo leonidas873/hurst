@@ -1,6 +1,10 @@
 import axios from 'axios'
+import {API} from './apiInstance';
 
 const SERVER_URL = 'https://e-commerce-nest-backend.herokuapp.com/api'
+
+
+// auth
 
 export const loginAPI = async (data) => {
     try {
@@ -22,3 +26,24 @@ export const registerAPI = async (data) => {
         throw new Error(err.response.data.message);
     }
 };
+
+// shop
+
+export const fetchShopProducts = async () => {
+    try {
+      return await axios.get(`${SERVER_URL}/product`)
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
+
+  export const fetchSingleProduct = async (id) => {
+    try {
+      return await axios.get(`${SERVER_URL}/product/${id}`)
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
+
+// cart
+

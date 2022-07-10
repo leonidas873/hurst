@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Box, Toolbar, Badge, Popover, List, ListItemButton, Drawer, Typography, Menu, Fade } from '@mui/material'
 import { MyAppBar, Image, MyListItem, MyListItemText, AllProducts, SingleProduct, ImageContainer, ProductInfo, MyIconButton, CloseIconButton, Total, RightIconButton } from './Style';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 
+
+const navbarList = [{name:'home', path:'/'}, {name:'shop', path:'/shop'}, {name:'lookbook', path:'/lookbook'}, {name:'blog', path:'/blog'}, {name:'about us', path:'/aboutUs'}, {name:'contact', path:'/contact'}];
+
+
 const Navbar = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false)
-
+    const navigate = useNavigate();
     const handleOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -52,10 +56,10 @@ const Navbar = () => {
                                     <span className={menuOpen ? 'animate closeSpan' : 'closeSpan'}></span>
                                 </MyIconButton>
                                 <List sx={{ mt: 5 }}>
-                                    {['home', 'products', 'lookbook', 'blog', 'about us', 'contact'].map((text) => (
-                                        <MyListItem key={text} disablePadding>
-                                            <ListItemButton>
-                                                <MyListItemText primary={text} />
+                                    {navbarList.map((item) => (
+                                        <MyListItem key={item.path} disablePadding>
+                                            <ListItemButton onClick={()=>navigate(item.path)}>
+                                                <MyListItemText primary={item.name} />
                                             </ListItemButton>
                                         </MyListItem>
                                     ))}

@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/login" element={localStorage.getItem('token') ? <Navigate to="/" /> : <Login />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/singleProduct" element={<SingleProduct />} />
+        <Route path="/singleProduct/:id" element={<SingleProduct />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </>

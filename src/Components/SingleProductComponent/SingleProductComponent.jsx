@@ -125,10 +125,10 @@ const TabPanel = (props) => {
     );
 }
 
-const SingleProductComponent = () => {
+const SingleProductComponent = ({productData}) => {
 
     const [visible, setVisible] = useState(false)
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState(productData.quantity)
 
     const settings = {
         dots: false,
@@ -236,15 +236,15 @@ const SingleProductComponent = () => {
                     </Grid>
                     <Grid item xs={12} md={8}>
                         <DescHeader>
-                            <h4>dummy Product name</h4>
+                            <h4>{productData.name}</h4>
                             <div>
                                 <MyRating name="read-only" value="3" readOnly />
                                 <span>(27 Rating)</span>
                             </div>
                         </DescHeader>
                         <Details>
-                            <span>$ 56.20</span>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humou or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum.</p>
+                            <span>$ {productData.price}</span>
+                            <p>{productData.description}</p>
                         </Details>
                         <ColorProperty>
                             <ul>
@@ -310,11 +310,8 @@ const SingleProductComponent = () => {
                 <Grid item xs={12} md={9}>
                     <MyPaper elevation={0}>
                         <TabPanel value={value} index={0}>
-                            <Title>dummy product name</Title>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at est bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                        </TabPanel>
+                            <Title>description</Title>
+                            <p>{productData.description}</p> </TabPanel>
                         <TabPanel value={value} index={1}>
                             <Title>customer review</Title>
                             {reviewArray.map(item =>
