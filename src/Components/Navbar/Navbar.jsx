@@ -4,10 +4,10 @@ import { MyAppBar, Image, MyListItem, MyListItemText, AllProducts, SingleProduct
 import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogIn, FiLogOut } from 'react-icons/fi'
 
 
-const navbarList = [{name:'home', path:'/'}, {name:'shop', path:'/shop'}, {name:'lookbook', path:'/lookbook'}, {name:'blog', path:'/blog'}, {name:'about us', path:'/aboutUs'}, {name:'contact', path:'/contact'}];
+const navbarList = [{ name: 'home', path: '/' }, { name: 'shop', path: '/shop' }, { name: 'lookbook', path: '/lookbook' }, { name: 'blog', path: '/blog' }, { name: 'about us', path: '/aboutUs' }, { name: 'contact', path: '/contact' }];
 
 
 const Navbar = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 <List sx={{ mt: 5 }}>
                                     {navbarList.map((item) => (
                                         <MyListItem key={item.path} disablePadding>
-                                            <ListItemButton onClick={()=>navigate(item.path)}>
+                                            <ListItemButton onClick={() => navigate(item.path)}>
                                                 <MyListItemText primary={item.name} />
                                             </ListItemButton>
                                         </MyListItem>
@@ -69,10 +69,9 @@ const Navbar = () => {
                         <Link to="/" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
                             <Image src="https://template.hasthemes.com/hurst-v1/hurst/img/logo/logo.png" alt="logo" />
                         </Link>
-                        <div>
-                            {
-                                localStorage.getItem('token') &&
-                                <>
+                        {
+                            localStorage.getItem('token') ?
+                                <div>
                                     <span>{JSON.parse(localStorage.getItem('user'))}</span>
                                     <RightIconButton
                                         sx={{ ml: 2 }}
@@ -84,20 +83,30 @@ const Navbar = () => {
                                     >
                                         <FiLogOut />
                                     </RightIconButton>
+                                    <RightIconButton
+                                        size="medium"
+                                        edge="start"
+                                        aria-label="cart"
+                                        sx={{ ml: 2 }}
+                                        onMouseEnter={handleOpen}
+                                    >
+                                        <Badge badgeContent={4}>
+                                            <FaShoppingCart />
+                                        </Badge>
+                                    </RightIconButton>
+                                </div>
+                                :
+                                <>
+                                    <RightIconButton
+                                        sx={{ ml: 2 }}
+                                        onClick={() => {
+                                            navigate('/login')
+                                        }}
+                                    >
+                                        <FiLogIn />
+                                    </RightIconButton>
                                 </>
-                            }
-                            <RightIconButton
-                                size="medium"
-                                edge="start"
-                                aria-label="cart"
-                                sx={{ ml: 2 }}
-                                onMouseEnter={handleOpen}
-                            >
-                                <Badge badgeContent={4}>
-                                    <FaShoppingCart />
-                                </Badge>
-                            </RightIconButton>
-                        </div>
+                        }
                         <Menu
                             MenuListProps={{
                                 'aria-labelledby': 'fade-button',
