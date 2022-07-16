@@ -171,7 +171,7 @@ export const Total = styled('p')({
     textAlign: 'right',
     borderBottom: '1px solid #f6f6f6',
     borderTop: '1px solid #f6f6f6',
-    padding: '10px 50px 20px 20px',
+    padding: '20px 50px 20px 20px',
 })
 
 export const RightIconButton = styled(IconButton)({
@@ -188,4 +188,11 @@ export const RightIconButton = styled(IconButton)({
     '& svg:hover': {
         color: '#c8a165'
     },
+})
+
+export const FlexContainer = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '20px 60px 0',
 })

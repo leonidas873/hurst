@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Toolbar, Badge, Popover, List, ListItemButton, Drawer, Typography, Menu, Fade } from '@mui/material'
-import { MyAppBar, Image, MyListItem, MyListItemText, AllProducts, SingleProduct, ImageContainer, ProductInfo, MyIconButton, CloseIconButton, Total, RightIconButton } from './Style';
+import { MyAppBar, Image, MyListItem, MyListItemText, AllProducts, SingleProduct, ImageContainer, ProductInfo, MyIconButton, CloseIconButton, Total, RightIconButton, FlexContainer } from './Style';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
+import { MainButton } from '../Common'
 
 
 const navbarList = [{ name: 'home', path: '/' }, { name: 'shop', path: '/shop' }, { name: 'lookbook', path: '/lookbook' }, { name: 'blog', path: '/blog' }, { name: 'about us', path: '/aboutUs' }, { name: 'contact', path: '/contact' }];
@@ -16,10 +17,6 @@ const Navbar = () => {
     const navigate = useNavigate();
     const handleOpen = (event) => {
         setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null)
     };
 
     const open = Boolean(anchorEl);
@@ -155,6 +152,10 @@ const Navbar = () => {
                                     </SingleProduct>
                                 </AllProducts>
                                 <Total>total: ${"500"}</Total>
+                                <FlexContainer>
+                                    <MainButton altName="view cart" name="view cart" onClick={() => navigate('/cart')} />
+                                    <MainButton altName="check out" name="check out" onClick={() => navigate('/cart/checkout')} />
+                                </FlexContainer>
                             </Box>
                         </Menu>
 
