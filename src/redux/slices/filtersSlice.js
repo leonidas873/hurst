@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   activeFilter: '',
+  shopPage:1
 }
 
 export const filtersSlice = createSlice({
@@ -11,16 +12,13 @@ export const filtersSlice = createSlice({
     setActiveFilter: (state, action) => {
       state.activeFilter = action.payload
     },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+    setShopPage: (state, action) => {
+      state.shopPage = action.payload
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setActiveFilter, decrement, incrementByAmount } = filtersSlice.actions
+export const { setActiveFilter, setShopPage } = filtersSlice.actions
 
 export default filtersSlice.reducer

@@ -10,8 +10,8 @@ const HeroBanner = ({ text, breadcrumbs }) => {
             <MyContainer maxWidth="lg">
                 <h2>{text}</h2>
                 <MyBreadcrumbs aria-label="breadcrumb">
-                    {breadcrumbs.links.map((item) =>
-                        <Link href={item.href}>
+                    {breadcrumbs.links.map((item, ind) =>
+                        <Link href={item.href} key={ind}>
                             {item.text}
                         </Link>
                     )}

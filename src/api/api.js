@@ -29,9 +29,9 @@ export const registerAPI = async (data) => {
 
 // shop
 
-export const fetchShopProducts = async () => {
+export const fetchShopProducts = async (page) => {
     try {
-      return await axios.get(`${SERVER_URL}/product`)
+      return await axios.get(`${SERVER_URL}/product?page=${page}`)
     } catch (err) {
       throw new Error(err)
     }

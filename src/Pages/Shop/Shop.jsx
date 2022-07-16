@@ -5,15 +5,19 @@ import { MainLayout, HeroBanner } from "../../Components";
 import Filters from "../../Components/Shop/Filters/Filters";
 import Pagination from "../../Components/Shop/Pagination/Pagination";
 import ShopProducts from "../../Components/Shop/ShopProducts/ShopProducts";
+import {useSelector} from 'react-redux';
+import { useLocation } from "react-router-dom";
 
 const Shop = () => {
 
 const [products, setProducts] = useState(false);   
+const {shopPage} = useSelector(state=>state);
+const search = useLocation().search;
+const queryPage = new URLSearchParams(search).get('page');
 
 useEffect(()=>{
-    fetchShopProducts().then(res=>setProducts(res.data.result))
-
-},[])
+    fetchShopProducts(queryPage ? queryPage : shopPage).then(res=>setProducts(res.data.result))
+},[shopPage])
 
 
 

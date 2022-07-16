@@ -9,7 +9,7 @@ const Color = () => {
   return (
     <DropDown title={"color"}>
       <Box>
-        {colorsData.map(color=>
+        {colorsData.map((color,ind)=>
         <Box
         sx={{
             display:'flex',
@@ -24,6 +24,7 @@ const Color = () => {
             }
             
         }}
+        key={ind}
         >
         <ColorWrapper>
           <ColorBox color={color.value}/>
